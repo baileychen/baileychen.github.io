@@ -31,7 +31,8 @@ export default function Home() {
           </section>
 
           <section>
-            <h2>Work Experience</h2>
+            <Link href="/WorkExperience">
+            <a><h2>Work Experience</h2></a></Link>
             <p>What Bailey has worked on.</p>
             <h2>Playground</h2>
             <p>Strange personal things I've been working on &#x1F914; &#x1F9EA;</p>

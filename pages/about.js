@@ -1,5 +1,5 @@
-import React from 'react';
 import Link from 'next/link'
+import Navbar from '../components/Navbar';
 import styles from "./styles/About.module.css";
 
 const introBlurbHi = "Hi there! I am a software engineer with a passion for programming as well as biology and life sciences."
@@ -10,7 +10,7 @@ const About = () => (
             <p className={styles.introBlurb}>{introBlurbHi}</p>
             <p className={styles.introBlurb}>{ledFullstack}</p>
         </section>
-        <Link href="/">Take me back home! &#x1F3E0;</Link>
+        <Navbar/>
     </>
 );
 
