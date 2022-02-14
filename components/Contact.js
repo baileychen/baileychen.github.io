@@ -1,14 +1,14 @@
-const email = "baileychen@berkeley.edu";
+import styles from './styles/Contact.module.css';
+
+const email = 'baileychen@berkeley.edu';
+
 const Contact = () => {
     return (
-        <nav> 
-              <h2>Contact</h2> 
-              <p>
-                  <a href="mailto:baileychen@berkeley.edu">{email}</a>&#x1F4E7;
-                  </p>
-              <p><a>LinkedIn</a></p>
+        <nav className={styles.nav}>
+            <a href="mailto:baileychen@berkeley.edu">{email}</a>&#x1F4E7;
+            <a href="https://www.linkedin.com/in/bailey-chen-bc">LinkedIn</a>
         </nav>
     );
-}
+};
 
 export default Contact;

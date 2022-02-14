@@ -1,0 +1,25 @@
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    /* font-weight: normal; */
+    font-size: x-large;
+    font-weight: lighter;
+    margin: 0;
+}
+
+.description {
+    font-size: xx-large;
+    font-weight: normal;
+    text-align: center;
+    /* margin: 2rem; */
+    margin: 32px;
+}
+
+.veevaOverview {
+    font-size: x-large;
+    font-weight: normal;
+}

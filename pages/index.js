@@ -1,49 +1,64 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import Contact from '../components/Contact';
+import CaseStudy from '../components/CaseStudy';
+import Navbar from '../components/Navbar';
+import blurbs from '../textblurb/blurbs';
+import styles from './styles/Index.module.css';
+
+const h2Link = (path, text, description) => (
+    <section>
+        <Link href={path}>
+            <h2>
+                <a href={path}>{text}</a>
+            </h2>
+        </Link>
+        <p>{description}</p>
+    </section>
+);
+const fullName = 'Bailey Chen';
 
 export default function Home() {
-  return (
-    <div className={"container"}>
-      <Head>
-        <title>Bailey</title>
-        <meta name="description" content="Bailey's Website" />
-      </Head>
+    const { introBlurbs, veevaOverview, workExperience } = blurbs;
+    const { veeva } = workExperience;
+    const { internship2018, tripReport } = veeva;
+    return (
+        <div className="container">
+            <Head>
+                <title>{fullName}</title>
+                <meta name="description" content="Bailey's Website" />
+            </Head>
 
-      <main className={"main"}>
-        <h1 className={"title"}>
-          Salutations fellow earthling &#x1F30D;
-        </h1>
+            <main className="main">
+                <header className={styles.header}>
+                    <p className={styles.title}>{fullName}</p>
+                    <Navbar />
+                </header>
 
-        <p className={"description"}>
-          Welcome to my website
-        </p>
+                <p className={styles.description}>
+                    {introBlurbs.map((b) => (
+                        <div>{b}</div>
+                    ))}
+                </p>
 
-        <div className={"grid"}>
-          <section>
-            <Link href="/about">
-              <h2>
-                <a href="/about">About Me</a>
-              </h2>
-            </Link>
-            <p>Who is Bailey? &#x1F469;</p>
-          </section>
-
-          <section>
-            <Link href="/WorkExperience">
-            <a><h2>Work Experience</h2></a></Link>
-            <p>What Bailey has worked on.</p>
-            <h2>Playground</h2>
-            <p>Strange personal things I've been working on &#x1F914; &#x1F9EA;</p>
-          </section>
-            {<Contact/>}
+                {/* <section>
+                    <h2 className={styles.veevaOverview}>{veevaOverview.title}</h2>
+                    <p>{veevaOverview.introVeeva}</p>
+                    <p>{veevaOverview.introMe}</p>
+                </section> */}
+                <CaseStudy
+                    title={tripReport.title}
+                    descriptions={[tripReport.intro]}
+                    linkPath={'/cases/oversight'}
+                />
+                <CaseStudy
+                    title={internship2018.title}
+                    descriptions={[internship2018.intro]}
+                    linkPath={'/cases/workflow'}
+                />
+                {<Contact />}
+            </main>
         </div>
-      </main>
-    </div>
-  )
+    );
 }
-
-function wrappedSection(component) {
-  return <section>{component}</section>;
-};

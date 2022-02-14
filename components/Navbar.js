@@ -1,9 +1,11 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import styles from './styles/Navbar.module.css';
 
 export default function Navbar() {
     return (
-        <nav>
-            <Link href="/">Take me back home! &#x1F3E0;</Link>
+        <nav className={styles.navigation}>
+            <Link href="/">Work</Link>
+            <Link href="/about">About</Link>
         </nav>
     );
-};
+}
