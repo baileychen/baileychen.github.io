@@ -1,5 +1,8 @@
 .nav {
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: center;
+}
+
+.link {
+    margin: 1rem;
 }

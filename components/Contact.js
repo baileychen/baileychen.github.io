@@ -5,8 +5,12 @@ const email = 'baileychen@berkeley.edu';
 const Contact = () => {
     return (
         <nav className={styles.nav}>
-            <a href="mailto:baileychen@berkeley.edu">{email}</a>&#x1F4E7;
-            <a href="https://www.linkedin.com/in/bailey-chen-bc">LinkedIn</a>
+            <a className={styles.link} href="mailto:baileychen@berkeley.edu">
+                {email}
+            </a>
+            <a className={styles.link} href="https://www.linkedin.com/in/bailey-chen-bc">
+                LinkedIn
+            </a>
         </nav>
     );
 };

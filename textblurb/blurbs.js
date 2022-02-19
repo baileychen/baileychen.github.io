@@ -1,29 +1,37 @@
-const veeva = {
-    internship2018: {
-        title: `Increased access for process management tools`,
-        intro: 'Built portal to enable users to navigate and troubleshoot the setup of all versions of a process workflow.',
-        introMoreDetailed:
-            'Built a full-stack feature to create a "Version Controller" that enables users to navigate and explore the setup of all versions of a process workflow. This feature addressed a common source of confusion for customers and reduced production costs by ~15%.',
-        background: `Documents are numerous and important in the healthcare industry - from keeping track of clinical trials to promotional material and these documents need to follow numerous, stringent compliance rules. To streamline this complexity, we want to organize and formalize the process of various events like: sending notifications, assigning tasks for people to complete, finalizing document drafts, etc., and we do so by grouping these events into "workflows". For example, a biopharmaceutical company might want to create a workflow on a promotional document to get certain people to verify that the document makes accurate claims about a drug.`,
-        problem: {
-            painPoint: `Before the Version Controller, whenever someone wanted to examine the setup of a workflow, they would only see the latest version of a workflow, which could be different from the workflow version running on the document. So clearly, this doesn't always help the user see how the running workflow is setup. This mismatch in workflow versions is actually a major source of confusion for customers and this underlying 'workflow' logic runs across multiple applications on Veeva's 'Vault' platform (user: does this setup actually reflect what is running on my document? how do I know? Send help!).`,
-            productionImpact: `For my team, around half of the production issues were related to document workflows. To resolve the issue, customers would need to contact Veeva employees who would need to go through the Java backend and query to the MySQL database to find the version of the workflow running on a document. And even then, it would be inconvenient to try viewing the setup of past workflow versions.`,
-        },
-        fix: `Now, with the Version Controller, users can access an enhanced menu-widget option to navigate through the setup of all versions of a workflow. They can also see the version of a workflow a document is running against so that there is no version mismatch. All this information is extracted at runtime. This would let customers examine and resolve these document workflow related issues themselves and spare the process of contacting support altogether!`,
-        whatILearned: `A lot of what I learned over the summer was working with JavaScript and UI in general, along with learning how to communicate effectively at different technical levels (talking to product managers vs. developers). The iterative process of discussing the plan for API changes and working towards the best customer user-experience was also something I delved into and learned about!`,
-        screenshotCaptions: {
-            dialog: [
-                `Pop-up Dialog that provides contextual information on workflows (version number, last modified, etc)`,
-                `Navigation links to all workflow versions`,
-            ],
-            workflowView: `Read-only view of past workflow versions setup (it would be bad if a user could bring back an old broken workflow version. Yikes!)`,
-        },
+// veeva
+const internship2018 = {
+    title: `Increased access for process management tools`,
+    intro: 'Built portal to enable users to navigate and troubleshoot the setup of all versions of a process workflow.',
+    linkPath: '/cases/workflow',
+    wow: 'oo',
+    introMoreDetailed:
+        'Built a full-stack feature to create a "Version Controller" that enables users to navigate and explore the setup of all versions of a process workflow. This feature addressed a common source of confusion for customers and reduced production costs by ~15%.',
+    background: `Documents are numerous and important in the healthcare industry - from keeping track of clinical trials to promotional material and these documents need to follow numerous, stringent compliance rules. To streamline this complexity, we want to organize and formalize the process of various events like: sending notifications, assigning tasks for people to complete, finalizing document drafts, etc., and we do so by grouping these events into "workflows". For example, a biopharmaceutical company might want to create a workflow on a promotional document to get certain people to verify that the document makes accurate claims about a drug.`,
+    problem: {
+        painPoint: `Before the Version Controller, whenever someone wanted to examine the setup of a workflow, they would only see the latest version of a workflow, which could be different from the workflow version running on the document. So clearly, this doesn't always help the user see how the running workflow is setup. This mismatch in workflow versions is actually a major source of confusion for customers and this underlying 'workflow' logic runs across multiple applications on Veeva's 'Vault' platform (user: does this setup actually reflect what is running on my document? how do I know? Send help!).`,
+        productionImpact: `For my team, around half of the production issues were related to document workflows. To resolve the issue, customers would need to contact Veeva employees who would need to go through the Java backend and query to the MySQL database to find the version of the workflow running on a document. And even then, it would be inconvenient to try viewing the setup of past workflow versions.`,
     },
-    tripReport: {
-        title: `Modernized user experience for clinical trial oversight`,
-        intro: 'Monitoring and overseeing clinical trials ensures compliance with important protocols and regulations. I modernized the frontend component of this process using React.',
+    fix: `Now, with the Version Controller, users can access an enhanced menu-widget option to navigate through the setup of all versions of a workflow. They can also see the version of a workflow a document is running against so that there is no version mismatch. All this information is extracted at runtime. This would let customers examine and resolve these document workflow related issues themselves and spare the process of contacting support altogether!`,
+    whatILearned: `A lot of what I learned over the summer was working with JavaScript and UI in general, along with learning how to communicate effectively at different technical levels (talking to product managers vs. developers). The iterative process of discussing the plan for API changes and working towards the best customer user-experience was also something I delved into and learned about!`,
+    screenshotCaptions: {
+        dialog: [
+            `Pop-up Dialog that provides contextual information on workflows (version number, last modified, etc)`,
+            `Navigation links to all workflow versions`,
+        ],
+        workflowView: `Read-only view of past workflow versions setup (it would be bad if a user could bring back an old broken workflow version. Yikes!)`,
     },
 };
+const tripReport = {
+    title: `Modernized user experience for clinical trial oversight`,
+    intro: 'Monitoring and overseeing clinical trials ensures compliance with important protocols and regulations. I modernized the frontend component of this process using React.',
+    linkPath: '/cases/oversight',
+};
+const archiveStudy = {
+    title: `One-click clinical study archival`,
+    intro: `When a clinical trial is finished, it is vital to archive all sensitive documents and related data. I created a one-click action to automate this time-consuming process.`,
+    linkPath: '/cases/archive',
+};
+const veeva = [tripReport, archiveStudy, internship2018];
 const workExperience = {
     veeva,
     berkeleySummer2016: {
@@ -47,9 +55,7 @@ const workExperience = {
     },
 };
 const introBlurbs = [
-    'Software engineer building intuitive and streamlined solutions to Clinical Trial processes.',
-    'Modernizing user-experience for clinical trial management.',
-    'React enthusiast and Java sipper.',
+    'Software engineer building intuitive and streamlined solutions to Clinical Trial processes. Modernizing user-experience for clinical trial management. React enthusiast and Java sipper.',
 ];
 const veevaOverview = {
     title: `Optimizing user experience for Life Sciences tools`,

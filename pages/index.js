@@ -1,10 +1,11 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import Contact from '../components/Contact';
 import CaseStudy from '../components/CaseStudy';
 import Navbar from '../components/Navbar';
 import blurbs from '../textblurb/blurbs';
+import sfProfPic from '../public/images/sf_profile_pic.jpeg';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles/Index.module.css';
 
 const h2Link = (path, text, description) => (
@@ -18,45 +19,42 @@ const h2Link = (path, text, description) => (
     </section>
 );
 const fullName = 'Bailey Chen';
+const centered = (component) => (
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '10rem',
+        }}
+    >
+        {component}
+    </div>
+);
 
 export default function Home() {
     const { introBlurbs, veevaOverview, workExperience } = blurbs;
     const { veeva } = workExperience;
-    const { internship2018, tripReport } = veeva;
     return (
         <div className="container">
             <Head>
                 <title>{fullName}</title>
                 <meta name="description" content="Bailey's Website" />
             </Head>
-
-            <main className="main">
+            <main className={styles.main}>
                 <header className={styles.header}>
                     <p className={styles.title}>{fullName}</p>
                     <Navbar />
                 </header>
-
-                <p className={styles.description}>
-                    {introBlurbs.map((b) => (
-                        <div>{b}</div>
-                    ))}
-                </p>
-
-                {/* <section>
-                    <h2 className={styles.veevaOverview}>{veevaOverview.title}</h2>
-                    <p>{veevaOverview.introVeeva}</p>
-                    <p>{veevaOverview.introMe}</p>
-                </section> */}
-                <CaseStudy
-                    title={tripReport.title}
-                    descriptions={[tripReport.intro]}
-                    linkPath={'/cases/oversight'}
-                />
-                <CaseStudy
-                    title={internship2018.title}
-                    descriptions={[internship2018.intro]}
-                    linkPath={'/cases/workflow'}
-                />
+                <p className={styles.description}>{introBlurbs}</p>
+                {centered(<Image src={sfProfPic} />)}
+                {veeva.map(({ title, intro, linkPath }, i) => (
+                    <CaseStudy
+                        title={title}
+                        descriptions={[intro]}
+                        linkPath={linkPath}
+                        isRight={i % 2 == 0}
+                    />
+                ))}
                 {<Contact />}
             </main>
         </div>
