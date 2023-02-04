@@ -52,7 +52,7 @@ export default function Home() {
                         title={title}
                         descriptions={[intro]}
                         linkPath={linkPath}
-                        isRight={i % 2 == 0}
+                        isRight={i % 2 === 0}
                     />
                 ))}
                 {<Contact />}
