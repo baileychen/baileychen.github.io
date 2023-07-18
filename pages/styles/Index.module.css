@@ -1,0 +1,32 @@
+main.main {
+    margin: 1.5rem;
+}
+
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    /* font-weight: normal; */
+    font-size: 30px;
+    font-weight: lighter;
+    margin: 1rem;
+}
+
+.description {
+    font-size: xx-large;
+    font-weight: normal;
+    text-align: center;
+    margin: 4rem;
+}
+
+.veevaOverview {
+    font-size: x-large;
+    font-weight: normal;
+}
+
+.baileyProfilePic {
+    border-radius: 50%;
+}
